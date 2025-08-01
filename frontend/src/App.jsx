@@ -10,8 +10,8 @@ import SearchBar from './components/SearchBar'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import PlaceOrder from './pages/PlaceOrder'
-
 import Orders from './pages/Orders'
+import Login from './pages/Login'
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -31,7 +31,7 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='/orders' element={<Orders />} />
-
+        <Route path='/login' element={<Login />} />
         {/* Add other routes as needed */}
 
       </Routes>
