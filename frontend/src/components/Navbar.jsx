@@ -4,7 +4,14 @@ import { assets } from '../assets/assets'
 import { ShopContext } from '../context/ShopContext';
 const Navbar = () => {
     const [visible, setVisible] = useState(false);
-    const { setShowSearch, getCartCount } = useContext(ShopContext);
+    const { setShowSearch, getCartCount, token, setToken, setCartItems, navigate } = useContext(ShopContext);
+
+    const logout = ()=> {
+        navigate('/login');
+        setToken('');
+        localStorage.removeItem('token');
+        setCartItems({});
+    }
   return (
     <div className='flex justify-between items-center py-5 font-medium'>
        <Link to={"/"}><img src={assets.logo} className='w-36' alt="" /></Link>
@@ -33,14 +40,15 @@ const Navbar = () => {
         <div className='flex items-center gap-6'>
           <img onClick={() => setShowSearch(true)} src={assets.search_icon} alt="" className='w-5 cursor-pointer' />
           <div className='group relative'>
-            <Link to={'/login'}><img src={assets.profile_icon} alt="" className='w-5 cursor-pointer' /></Link>
-            <div className='group-hover:block hidden absolute right-0 pt-4 dropdown-menu'>
+            
+            <img src={assets.profile_icon} alt="" className='w-5 cursor-pointer' />
+           {token &&  <div className='group-hover:block hidden absolute right-0 pt-4 dropdown-menu'>
                 <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-700'>
                     <p className='hover:text-black cursor-pointer'>My Profile</p>
-                    <p className='hover:text-black cursor-pointer'>Orders</p>
-                    <p className='hover:text-black cursor-pointer'>Logout</p>
+                    <p onClick={()=> navigate('/orders')} className='hover:text-black cursor-pointer'>Orders</p>
+                    <p onClick={()=> logout()} className='hover:text-black cursor-pointer'>Logout</p>
                 </div>
-            </div>
+            </div>}
         </div>
         <Link to={"/cart"} className='relative'>
           <img src={assets.cart_icon} alt="" className='w-5 min-w-5 cursor-pointer' />
