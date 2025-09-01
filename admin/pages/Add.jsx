@@ -51,8 +51,7 @@ const Add = ({token}) => {
         setImage4(false);
         setBestSeller(false);
         setSizes([]);
-        setCategory('');
-        setSubCategory('');
+        
         } else {
           toast.error(response.data.message);
         }
