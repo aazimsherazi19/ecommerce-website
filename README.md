@@ -82,9 +82,15 @@ npm install
 
 Create `.env` file inside `backend/`:
 ```
-PORT=3000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret
+PORT=5000
+MONGODB_URI=your_mongodb_connection
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_SECRET_KEY=your_secret_key
+CLOUDINARY_NAME=your_cloudinary_name
+JWT_SECRET_KEY=your_jwt_secret
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+STRIPE_SECRET_KEY=your_stripe_secret
 ```
 
 Run backend:
@@ -125,12 +131,6 @@ Contributions are welcome!
 3. Commit changes (`git commit -m 'Add feature'`)  
 4. Push branch (`git push origin feature/YourFeature`)  
 5. Create a Pull Request  
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.  
 
 ---
 
