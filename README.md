@@ -82,7 +82,7 @@ npm install
 
 Create `.env` file inside `backend/`:
 ```
-PORT=5000
+PORT=4000
 MONGODB_URI=your_mongodb_connection
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_SECRET_KEY=your_secret_key
@@ -97,6 +97,8 @@ Run backend:
 ```bash
 npm run dev
 ```
+Backend will run at → http://localhost:4000
+
 
 ### Frontend Setup
 ```bash
@@ -105,7 +107,7 @@ npm install
 npm start
 ```
 
-Open your browser → `http://localhost:3000` 🎉
+Open your browser → `http://localhost:5173` 🎉
 
 ---
 
